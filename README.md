@@ -1,3 +1,3 @@
 # ToDo
 
-React app
+React app for ToDo list
