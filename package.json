@@ -1,0 +1,24 @@
+{
+  "name": "todolist",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "material-ui": "^0.20.0",
+    "pubsub-js": "^1.5.7",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-responsive": "^4.0.3",
+    "react-scripts": "1.0.17",
+    "styled-components": "^2.2.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "eslint": "^4.13.1",
+    "eslint-plugin-react": "^7.5.1"
+  }
+}
