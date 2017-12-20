@@ -8,7 +8,6 @@ const ContainerText = styled.p`
 `;
 
 class Text extends React.Component {
-
 	static propTypes = {
 		'label': PropTypes.string.isRequired,
 	}

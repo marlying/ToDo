@@ -1,22 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
 import { injectGlobal } from 'styled-components';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { Provider } from 'react-redux';
+
+import App from './App';
+import store from './redux/store';
 
 
-ReactDOM.render(<MuiThemeProvider><App/></MuiThemeProvider>, document.getElementById('root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <MuiThemeProvider>
+      <App/>
+    </MuiThemeProvider>
+  </Provider>,
+  document.getElementById('root'),
+);
 
 injectGlobal`
-	body {
-		font-family: 'Roboto', 'sans-serif';
-		background-color: #ffffff;
-		background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23f2eaec' fill-opacity='0.7' fill-rule='evenodd'/%3E%3C/svg%3E");
-	}
+  body {
+    font-family: 'Roboto', 'sans-serif';
+    background-color: #ffffff;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='16' viewBox='0 0 12 16' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 .99C4 .445 4.444 0 5 0c.552 0 1 .45 1 .99v4.02C6 5.555 5.556 6 5 6c-.552 0-1-.45-1-.99V.99zm6 8c0-.546.444-.99 1-.99.552 0 1 .45 1 .99v4.02c0 .546-.444.99-1 .99-.552 0-1-.45-1-.99V8.99z' fill='%23f2eaec' fill-opacity='0.7' fill-rule='evenodd'/%3E%3C/svg%3E");
+  }
 
-	h1 {
-		font-family: 'Gloria Hallelujah', cursive;
-		color: #b2757d;
+  h1 {
+    font-family: 'Gloria Hallelujah', cursive;
+    color: #b2757d;
     text-align: center;
-	}
+  }
 `;
