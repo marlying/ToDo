@@ -3,16 +3,19 @@ import { ADD_TASK } from '../constants';
 let id = 3;
 
 const addTask = (state, value) => {
-  let tasks = state.tasks.slice();
-  let filteredTasks = state.filteredTasks.slice();
+  const newTask = { text: value, complete: false, id: id++ };
 
-  tasks.push({ text: value, complete: false, id: id++ });
-  filteredTasks.push({ text: value, complete: false, id });
   return {
-    tasks,
-    filteredTasks,
+    tasks: [
+      ...state.tasks,
+      newTask,
+    ],
+    filteredTasks: [
+      ...state.filteredTasks,
+      newTask,
+    ],
   };
-}
+};
 
 export default (state = {}, action) => {
   switch (action.type) {
