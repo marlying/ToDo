@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import MediaQuery from 'react-responsive';
-
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
 // import Filter from './Filter';
