@@ -26,8 +26,8 @@ class TaskList extends React.Component {
     let list = this.props.tasks.map((task, index) => {
       return(
         <ContainerMargin key={task.id} bottom="1em">
-          <ContainerTask 
-            text={task.text} 
+          <ContainerTask
+            text={task.text}
             complete={task.complete}
             key={task.id}
             id={task.id}

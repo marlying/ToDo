@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import TaskList from './TaskList';
-// import AddTask from './AddTask';
-// import Filter from './Filter';
 import styled from 'styled-components';
 import MediaQuery from 'react-responsive';
+
+import TaskList from './components/TaskList';
+import AddTask from './components/AddTask';
+// import Filter from './Filter';
 
 const AppContainer = styled.div`
   display: flex;
@@ -31,8 +32,6 @@ const ContainerFilter = styled.div`
   align-self: flex-start;
 `;
 
-let id = 3;
-
 class App extends Component {
   render() {
     return (
@@ -42,7 +41,7 @@ class App extends Component {
           <Container>
             {/* <ContainerFilter> <Filter/> </ContainerFilter> */}
             <TaskList/>
-            {/* <AddTask/> */}
+            <AddTask/>
           </Container>
         </AppContainer>
       </div>
@@ -92,9 +91,9 @@ export default App;
 // class App extends Component {
 //   constructor() {
 //     super();
-    
+
 //     this.state = {
-      
+
 //     }
 
 //     this._handleDelete = this._handleDelete.bind(this);
@@ -161,7 +160,7 @@ export default App;
 //   }
 
 //   _handleFilter(msg, value) {
-//     let filteredTasks = this.state.tasks.filter((tasks) => { 
+//     let filteredTasks = this.state.tasks.filter((tasks) => {
 //       return(
 //         tasks.text.toUpperCase().includes(value.toUpperCase())
 //       );
@@ -173,7 +172,7 @@ export default App;
 //     return (
 //       <div>
 //         <MediaQuery maxDeviceWidth={414}>
-          
+
 //         </MediaQuery>
 //         <h1>To-do List</h1>
 //         <AppContainer>

@@ -1,19 +1,16 @@
 import React from 'react';
-import Button from './Button';
-import Input from './Input';
-import PubSub from 'pubsub-js';
-import styled from 'styled-components';
-
+import PropTypes from 'prop-types';
 import RaisedButton from 'material-ui/RaisedButton';
 
-const Container = styled.div`
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 400px;
-`;
+import Button from '../Button';
+import Input from '../Input';
+
+import { Container } from './styles';
 
 class AddTask extends React.Component {
+  static propTypes = {
+    onAdd: PropTypes.func.isRequired,
+  }
 
   constructor() {
     super();
@@ -30,7 +27,7 @@ class AddTask extends React.Component {
   }
 
   _handleAdd() { //to avisando para o app
-    PubSub.publish("ADD_TASK", this.state.value);
+    this.props.onAdd(this.state.value);
     this.setState({ value: '' });
   }
 
