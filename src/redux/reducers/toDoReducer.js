@@ -3,36 +3,25 @@ import { ADD_TASK, DELETE_TASK } from '../constants';
 let id = 3;
 
 export default (state = {}, action) => {
-  console.log(action.type);
   switch (action.type) {
     case ADD_TASK:
       return addTask(state, action.newTask);
     case DELETE_TASK:
-      return deleteTask(state, action.id);
+      return {
+        tasks: deleteTask(state.tasks, action.id),
+        filteredTasks: deleteTask(state.filteredTasks, action.id),
+      };
     default:
       return state;
   }
 };
 
-const deleteTask = (state, targetId) => {
-  let tasks = state.tasks.slice();
-  let filteredTasks = state.filteredTasks.slice();
-
-  tasks.forEach((element, index, array) => {
-    if (element.id === targetId) {
-      tasks.splice(index, 1);
+const deleteTask = (tasks, targetId) => {
+  return tasks.filter((element) => {
+    if (element.id !== targetId) {
+      return element;
     }
   });
-  filteredTasks.forEach((element, index, array) => {
-    if (element.id === targetId) {
-      filteredTasks.splice(index, 1);
-    }
-  });
-
-  return {
-    tasks,
-    filteredTasks,
-  };
 };
 
 const addTask = (state, value) => {
